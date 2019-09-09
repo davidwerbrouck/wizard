@@ -23,6 +23,7 @@ a {
   color: #fff;
   text-decoration: none;
   background: $main-color;
+  -webkit-tap-highlight-color: transparent;
   
   &:not(:first-child):before, 
   &:not(:last-child):after {
@@ -62,6 +63,7 @@ a {
 
 span {
   font-size: .9rem;
+  pointer-events: none;
   &:before {
     display: block;
     margin-bottom: 2px;
