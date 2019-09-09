@@ -2,9 +2,10 @@
 //		*	@david_werbrouck on Twitter	*																																*
 //		*******************************
 
-$main-color: #303538;
-$main-hover-color: #586166;
-$main-lighter-color: #929EA5;
+$color: #303538;
+$hover-color: #586166;
+$lighter-color: #929EA5;
+$current-color: #007AFF;
 $size: 30px;
 
 :root {
@@ -22,7 +23,7 @@ a {
   padding-left: $size;
   color: #fff;
   text-decoration: none;
-  background: $main-color;
+  background: $color;
   -webkit-tap-highlight-color: transparent;
   
   &:not(:first-child):before, 
@@ -35,13 +36,13 @@ a {
 
   &:not(:first-child):before {
     transform: translateX(1px - $size);
-    border-left-color: $main-lighter-color;
+    border-left-color: $lighter-color;
   }
   
   &:not(:last-child):after {
     z-index: 1;
     transform: translateX($size);
-    border-left-color: $main-color;
+    border-left-color: $color;
   }
 
   &:first-child {
@@ -54,9 +55,9 @@ a {
   }
 
   &:hover {
-    background: $main-hover-color;
+    background: $hover-color;
     &:after {
-      border-left-color: $main-hover-color;
+      border-left-color: $hover-color;
     }
   }
 }
@@ -68,7 +69,26 @@ span {
     display: block;
     margin-bottom: 2px;
     font-size: .65rem;
-    color: $main-lighter-color;
+    color: $lighter-color;
     content: attr(title);
    }
+}
+
+.current, 
+.current:hover {
+  background: $current-color;
+  &:not(:first-child):before {
+    border-left-color: $current-color;
+  }
+  &:not(:last-child):after {
+    border-left-color: $current-color;
+  }
+  & + a {
+    &:not(:first-child):before {
+      border-left-color: $current-color;
+    }
+  }
+  span:before {
+    color: darken($current-color, 40%);
+  }
 }
