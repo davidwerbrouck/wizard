@@ -2,14 +2,14 @@
 //		*	@david_werbrouck on Twitter	*																																*
 //		*******************************
 
-$color: #303538;
-$hover-color: #586166;
-$lighter-color: #929EA5;
-$current-color: #007AFF;
-$size: 30px;
+$color:         #303538;
+$hover-color:   #3B4145;
+$lighter-color: #727D85;
+$current-color: #A9BAC4;
+$size:          30px;
 
 :root {
-  margin: $size * 2;
+  margin: $size;
   font-family: helvetica Neue, helvetica, sans-serif;
 }
 
@@ -76,18 +76,23 @@ span {
 
 .current, 
 .current:hover {
+  color: darken($current-color, 55%);
   background: $current-color;
+  
   &:not(:first-child):before {
     border-left-color: $current-color;
   }
+  
   &:not(:last-child):after {
     border-left-color: $current-color;
   }
+  
   & + a {
     &:not(:first-child):before {
       border-left-color: $current-color;
     }
   }
+  
   span:before {
     color: darken($current-color, 40%);
   }
