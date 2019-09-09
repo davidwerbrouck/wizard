@@ -1,0 +1,72 @@
+//		*******************************
+//		*	@david_werbrouck on Twitter	*																																*
+//		*******************************
+
+$main-color: #303538;
+$main-hover-color: #586166;
+$main-lighter-color: #929EA5;
+$size: 30px;
+
+:root {
+  margin: $size * 2;
+  font-family: helvetica Neue, helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+}
+
+a {
+  display: inherit;
+  align-items: center;
+  padding-left: $size;
+  color: #fff;
+  text-decoration: none;
+  background: $main-color;
+  
+  &:not(:first-child):before, 
+  &:not(:last-child):after {
+    display: block;
+    border: $size solid transparent;
+    border-right-width: 0;
+    content: '';
+  }
+
+  &:not(:first-child):before {
+    transform: translateX(1px - $size);
+    border-left-color: $main-lighter-color;
+  }
+  
+  &:not(:last-child):after {
+    z-index: 1;
+    transform: translateX($size);
+    border-left-color: $main-color;
+  }
+
+  &:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+
+  &:last-child {
+    border-radius: 0 4px 4px 0;
+    padding-right: $size;
+  }
+
+  &:hover {
+    background: $main-hover-color;
+    &:after {
+      border-left-color: $main-hover-color;
+    }
+  }
+}
+
+span {
+  font-size: .9rem;
+  &:before {
+    display: block;
+    margin-bottom: 2px;
+    font-size: .65rem;
+    color: $main-lighter-color;
+    content: attr(title);
+   }
+}
