@@ -1,12 +1,10 @@
 //		*******************************
-//		*	@david_werbrouck on Twitter	*																																*
+//		*	@david_werbrouck on Twitter	*
 //		*******************************
 
-$color:         #303538;
-$hover-color:   #3B4145;
-$lighter-color: #727D85;
-$current-color: #A9BAC4;
-$size:          30px;
+$dark:  #9297a0;
+$black: #696d73;
+$size:  34px;
 
 :root {
   margin: $size;
@@ -14,18 +12,31 @@ $size:          30px;
 }
 
 nav {
-  display: flex;
+  display: grid;
+  grid: 1fr / auto-flow auto;
 }
 
 a {
-  display: inherit;
-  align-items: center;
-  padding-left: $size;
-  color: #fff;
-  text-decoration: none;
-  background: $color;
   -webkit-tap-highlight-color: transparent;
-  
+  display: grid;  
+  grid: 1fr / #{$size} auto #{$size};
+  align-items: center;
+  border: 1px solid $dark;
+  border-width: 1px 0;
+  text-decoration: none;
+
+  &:first-child {
+    border-radius: 4px 0 0 4px;
+    border-width: 1px 0 1px 1px ;
+    grid: 1fr / auto #{$size};
+  }
+
+  &:last-child {
+    border-radius: 0 4px 4px 0;
+    border-width: 1px 1px 1px 0;
+    grid: 1fr / #{$size} auto;
+  }
+
   &:not(:first-child):before, 
   &:not(:last-child):after {
     display: block;
@@ -35,65 +46,20 @@ a {
   }
 
   &:not(:first-child):before {
-    transform: translateX(1px - $size);
-    border-left-color: $lighter-color;
+    border-left-color: $dark;
   }
   
   &:not(:last-child):after {
-    z-index: 1;
-    transform: translateX($size);
-    border-left-color: $color;
-  }
-
-  &:first-child {
-    border-radius: 4px 0 0 4px;
-  }
-
-  &:last-child {
-    border-radius: 0 4px 4px 0;
-    padding-right: $size;
-  }
-
-  &:hover {
-    background: $hover-color;
-    &:after {
-      border-left-color: $hover-color;
-    }
+    transform: translateX($size - 1px);
+    border-left-color: white;
   }
 }
 
 span {
-  font-size: .9rem;
-  pointer-events: none;
-  &:before {
-    display: block;
-    margin-bottom: 2px;
-    font-size: .65rem;
-    color: $lighter-color;
-    content: attr(title);
+  padding: 0 20px 0 30px;
+  line-height: 1.2rem;
+  color: $black;
+  &:first-line {
+    font-size: .85rem;
    }
-}
-
-.current, 
-.current:hover {
-  color: darken($current-color, 55%);
-  background: $current-color;
-  
-  &:not(:first-child):before {
-    border-left-color: $current-color;
-  }
-  
-  &:not(:last-child):after {
-    border-left-color: $current-color;
-  }
-  
-  & + a {
-    &:not(:first-child):before {
-      border-left-color: $current-color;
-    }
-  }
-  
-  span:before {
-    color: darken($current-color, 40%);
-  }
 }
