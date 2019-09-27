@@ -1,10 +1,15 @@
-//		*******************************
-//		*	@david_werbrouck on Twitter	*
-//		*******************************
+//	**********************
+//	*	 @david_werbrouck  *
+//	**********************
 
-$dark:  #9297a0;
-$black: #696d73;
-$size:  34px;
+
+$accent:    #1d1d1f;
+$primary:   lighten($accent, 25%);
+$secondary: lighten($accent, 60%);
+$fog-hover: lighten($accent, 80%);
+$fog:       lighten($accent, 85%);
+
+$size:     34px;
 
 :root {
   margin: $size;
@@ -18,22 +23,19 @@ nav {
 
 a {
   -webkit-tap-highlight-color: transparent;
-  display: grid;  
+  display: grid;
   grid: 1fr / #{$size} auto #{$size};
   align-items: center;
-  border: 1px solid $dark;
-  border-width: 1px 0;
   text-decoration: none;
+  background: $fog;
 
   &:first-child {
     border-radius: 4px 0 0 4px;
-    border-width: 1px 0 1px 1px ;
     grid: 1fr / auto #{$size};
   }
 
   &:last-child {
     border-radius: 0 4px 4px 0;
-    border-width: 1px 1px 1px 0;
     grid: 1fr / #{$size} auto;
   }
 
@@ -46,20 +48,67 @@ a {
   }
 
   &:not(:first-child):before {
-    border-left-color: $dark;
+    border-left-color: $secondary;
   }
   
   &:not(:last-child):after {
     transform: translateX($size - 1px);
-    border-left-color: white;
+    border-left-color: $fog;
   }
 }
 
 span {
   padding: 0 20px 0 30px;
   line-height: 1.2rem;
-  color: $black;
+  color: $secondary;
   &:first-line {
+    color: $secondary;
+    font-weight: 700;
     font-size: .85rem;
    }
+}
+
+.current {
+  background: $primary;
+  span {
+    color: $secondary;
+    &:first-line {
+      color: white;
+    }
+  }
+  &:not(:first-child):before {
+    border-left-color: $primary;
+  }
+  &:not(:last-child):after {
+    border-left-color: $primary;
+  }
+  & + a:not(:first-child):before {
+    border-left-color: $primary;
+  } 
+}
+
+a:not(.current):hover, 
+.done {
+  span {
+    color: $primary;
+    &:first-line {
+      color: $accent;
+    }
+  }
+}
+
+a:not(.current):hover {
+  background: $fog-hover;
+  &:not(:last-child):after,
+  &:not(:first-child):before {
+    border-left-color: $fog-hover;
+  }
+  & + a:not(.current):not(:first-child):before  {
+    border-left-color: $fog-hover;
+  }
+  .current + & {
+    &:not(:first-child):before {
+      border-left-color: initial;
+    }
+  }
 }
