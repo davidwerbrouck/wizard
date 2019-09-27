@@ -5,7 +5,7 @@ Step Wizard, with arrows, made with terse HTML and CSS only. <a href="https://da
 
 # Adding a step
 
-```
+```html
 <a href=''>
   <span>
     Step number<br>
@@ -17,12 +17,12 @@ Step Wizard, with arrows, made with terse HTML and CSS only. <a href="https://da
 # States
 
 To show the current step, add the "current" class on the link.
-```
+```html
 <a href='' class=current>
 ```
 To mark the step who is done, add the "done" class on the link.
 
-```
+```html
 <a href='' class=done>
 ```
 
@@ -30,14 +30,14 @@ To mark the step who is done, add the "done" class on the link.
 
 To change the size of the wizard globaly, edit $main-size in style.scss.
 
-```
+```css
 $main-size: 34px;
 ```
 
 To change the colors theme, edit $main-color in style.scss.
 
-```
-$main-color:    #1d1d1f;
+```css
+$main-color: #1d1d1f;
 ```
 
 
