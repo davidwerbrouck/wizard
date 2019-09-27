@@ -5,6 +5,8 @@ Step Wizard, with arrows, made with terse HTML and CSS only. <a href="https://da
 
 # Adding a step
 
+To add a new step, write this markup.
+
 ```html
 <a href=''>
   <span>
