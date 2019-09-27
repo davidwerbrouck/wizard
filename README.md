@@ -16,11 +16,11 @@ Step Wizard, with arrows, made with terse HTML and CSS only. <a href="https://da
 
 # States
 
-To show the current step, add the "current" class on the link
+To show the current step, add the "current" class on the link.
 ```
 <a href='' class=current>
 ```
-To mark the step who is done, add the "done" class on the link
+To mark the step who is done, add the "done" class on the link.
 
 ```
 <a href='' class=done>
