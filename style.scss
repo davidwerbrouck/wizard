@@ -2,18 +2,17 @@
 //	*	 @david_werbrouck  *
 //	**********************
 
+$main-size:  34px;
+$main-color: #1d1d1f;
 
-$accent:    #1d1d1f;
-$primary:   lighten($accent, 25%);
-$secondary: lighten($accent, 60%);
-$fog-hover: lighten($accent, 80%);
-$fog:       lighten($accent, 85%);
-
-$size:     34px;
+$primary: lighten($main-color, 25%);
+$secondary:lighten($main-color, 60%);
+$fog-hover: lighten($main-color, 80%);
+$fog: lighten($main-color, 85%);
 
 :root {
-  margin: $size;
-  font-family: helvetica Neue, helvetica, sans-serif;
+  margin: $main-size;
+  font-family: helvetica Neue, sans-serif;
 }
 
 nav {
@@ -24,9 +23,9 @@ nav {
 a {
   -webkit-tap-highlight-color: transparent;
   display: grid;
-  grid: 1fr / #{$size} auto #{$size};
+  grid: 1fr / #{$main-size} auto #{$main-size};
   align-items: center;
-  border: 1px solid $fog-hover;
+  border: 1px solid $secondary;
   border-width: 1px 0;
   text-decoration: none;
   background: $fog;
@@ -34,19 +33,19 @@ a {
   &:first-child {
     border-radius: 4px 0 0 4px;
     border-width: 1px 0 1px 1px;
-    grid: 1fr / auto #{$size};
+    grid: 1fr / auto #{$main-size};
   }
 
   &:last-child {
     border-radius: 0 4px 4px 0;
     border-width: 1px 1px 1px 0;
-    grid: 1fr / #{$size} auto;
+    grid: 1fr / #{$main-size} auto;
   }
 
   &:not(:first-child):before, 
   &:not(:last-child):after {
     display: block;
-    border: $size solid transparent;
+    border: $main-size solid transparent;
     border-right-width: 0;
     content: '';
   }
@@ -56,7 +55,7 @@ a {
   }
   
   &:not(:last-child):after {
-    transform: translateX($size - 1px);
+    transform: translateX($main-size - 1px);
     border-left-color: $fog;
   }
 }
@@ -96,7 +95,7 @@ a:not(.current):hover,
   span {
     color: $primary;
     &:first-line {
-      color: $accent;
+      color: $main-color;
     }
   }
 }
