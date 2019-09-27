@@ -18,6 +18,7 @@ $fog: lighten($main-color, 85%);
 nav {
   display: grid;
   grid: 1fr / auto-flow auto;
+  box-shadow: 0 2px 4px 0 $fog-hover;
 }
 
 a {
