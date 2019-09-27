@@ -26,16 +26,20 @@ a {
   display: grid;
   grid: 1fr / #{$size} auto #{$size};
   align-items: center;
+  border: 1px solid $fog-hover;
+  border-width: 1px 0;
   text-decoration: none;
   background: $fog;
 
   &:first-child {
     border-radius: 4px 0 0 4px;
+    border-width: 1px 0 1px 1px;
     grid: 1fr / auto #{$size};
   }
 
   &:last-child {
     border-radius: 0 4px 4px 0;
+    border-width: 1px 1px 1px 0;
     grid: 1fr / #{$size} auto;
   }
 
