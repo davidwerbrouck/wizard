@@ -111,7 +111,7 @@ a:not(.current):hover {
   }
   .current + & {
     &:not(:first-child):before {
-      border-left-color: initial;
+      border-left-color: $primary;
     }
   }
 }
