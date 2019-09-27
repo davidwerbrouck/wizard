@@ -30,14 +30,14 @@ To mark the step who is done, add the "done" class on the link.
 
 To change the size of the wizard globaly, edit $main-size in style.scss.
 
-```css
-$main-size: 34px;
+```scss
+$main-size: new-size;
 ```
 
 To change the colors theme, edit $main-color in style.scss.
 
-```css
-$main-color: #1d1d1f;
+```scss
+$main-color: new-color;
 ```
 
 
