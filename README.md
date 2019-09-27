@@ -9,7 +9,7 @@ Step Wizard, with arrows, made with terse HTML and CSS only. <a href="https://da
 <a href=''>
   <span>
     Step number<br>
-    Step ontent
+    Step content
   </span>
 <a>
 ```
