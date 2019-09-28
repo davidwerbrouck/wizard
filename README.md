@@ -1,5 +1,7 @@
 # Step Wizard
 
+![Step Wizard, HTML and CSS only](https://aston-agency.imgix.net/step-wizard.gif)
+
 Step Wizard, with arrows, made with terse HTML and CSS only. <a href="https://davidwerbrouck.github.io/wizard/">Check it out</a>.
 
 
